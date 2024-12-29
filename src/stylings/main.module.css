@@ -1,0 +1,270 @@
+@font-face {
+  font-family: "sf pro";
+  src: url("/fonts/sf-pro.ttf") format("truetype");
+  font-weight: 100 400 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "sf pro display";
+  src: url("/fonts/sf-pro-display_regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "sf pro display medium";
+  src: url("/fonts/sf-pro-display_medium.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "sf pro display bold";
+  src: url("/fonts/sf-pro-display_bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+.main_cont {
+  height: 100%;
+  width: 100%;
+  padding-top: 6vh;
+}
+
+.loading_cont {
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_grid {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.main_grid > * {
+  transition: all 200ms ease-in-out;
+}
+.main_grid > *:hover {
+  transform: scale(1.01);
+}
+
+.note_cont {
+  border: 1px solid #16161696;
+  background-color: #1c1c1c;
+  color: #ebebeb;
+  border-radius: 7px;
+  min-height: 180px;
+  height: auto;
+  width: 480px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  overflow: visible;
+  transition: all ease-in-out 100ms;
+  margin-bottom: 40px;
+}
+
+.note_cont:hover {
+  border: 1px solid #707070;
+  box-shadow: 2px 2px 0px 1px #dbdbdb9d;
+  transition: all ease-in-out 100ms;
+}
+
+.note_cont:focus-within {
+  border: 1px solid #707070;
+  box-shadow: 2px 2px 0px 1px #9191919d;
+  animation: editShake 300ms ease-in-out;
+}
+
+@keyframes editShake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.note_edit_mode {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: auto;
+  opacity: 0;
+  transition: all ease-in-out 300ms;
+}
+
+.note_cont:focus-within .note_edit_mode {
+  opacity: 1;
+  transition: all ease-in-out 200ms;
+}
+
+.note_edit_mode p {
+  color: #868686;
+  font-family: "sf pro display medium";
+  font-size: 11px;
+  padding: 5px 10px;
+}
+
+.note_subject {
+  /* height: 80%; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 24px;
+}
+
+.note_title {
+  height: auto;
+  width: 100%;
+  padding: 3px 2px;
+}
+
+.note_title h1 {
+  font-family: "sf pro display medium";
+  font-size: 24px;
+  padding: 5px 3px;
+}
+
+.note_title:focus {
+  outline: 1px solid #767676;
+  border-radius: 4px;
+}
+
+.note_subject_div {
+  background-color: #414141;
+  height: 1px;
+  width: 100%;
+}
+
+.note_content {
+  padding: 3px 2px;
+  /* min-height: 75%; */
+  height: auto;
+  width: 100%;
+  font-family: "sf pro display";
+  font-size: 14px;
+  margin-top: 5px;
+  min-height: 80px;
+}
+
+.note_content:focus {
+  outline: 1px solid #767676;
+  border-radius: 4px;
+}
+
+.note_content div {
+  color: #cacaca;
+  font-family: "sf pro display";
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.note_status_bar {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2%;
+}
+
+.note_delete_button {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  background-color: #800000;
+  color: white;
+  font-family: "sf pro display bold";
+  font-size: 11px;
+  height: 18px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+}
+
+.note_cont:hover .note_delete_button {
+  opacity: 1;
+  transition: all ease-in-out 200ms;
+}
+
+.note_status_bar p {
+  color: #a0a0a0;
+  font-family: "sf pro display medium";
+  font-size: 13px;
+}
+
+.note_restore_button {
+  outline: none;
+  /* border: 1px solid #545454; */
+  border: none;
+  border-radius: 4px;
+  background-color: #111111;
+  color: white;
+  font-family: "sf pro display bold";
+  font-size: 11px;
+  height: 22px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+}
+
+.note_restore_button:hover {
+  background-color: #000000;
+  transition: all ease-in-out 200ms;
+}
+
+.trashed_note_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.trashed_note_delete_button {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  background-color: #b90000be;
+  color: white;
+  font-family: "sf pro display bold";
+  font-size: 11px;
+  height: 22px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+}

@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "sf pro display";
+  src: url("/fonts/sf-pro-display_regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "sf pro display medium";
+  src: url("/fonts/sf-pro-display_medium.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "sf pro display bold";
+  src: url("/fonts/sf-pro-display_bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+.notification_cont {
+  border: 1px solid #6e6e6e9b;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #1b1b1bd7;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 70px;
+  min-width: 300px;
+  max-width: 450px;
+  position: fixed;
+  top: 70px;
+  right: -2px;
+  z-index: 9999;
+  user-select: none;
+  will-change: right;
+}
+
+.notification_contents {
+  height: 100%;
+  width: 100%;
+  padding-inline: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+.error_notification_icon {
+  filter: drop-shadow(0px 0px 10px rgba(255, 0, 0, 0.832));
+}
+
+.success_notification_icon {
+  filter: drop-shadow(0px 0px 10px rgba(0, 255, 4, 0.446));
+}
+
+.notification_info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.notification_info h6 {
+  color: #cacaca;
+  font-family: "sf pro display bold";
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+.notification_info p {
+  color: #e1e1e1;
+  font-family: "sf pro display";
+  font-size: 13px;
+}
+
+.task_noti_marginer {
+  background-color: #fff;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task_notification_cont {
+  border: 1px solid #2929297a;
+  border-radius: 12px;
+  background-color: #0f0f0fdc;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: 55px;
+  min-width: 270px;
+  /* max-width: 450px; */
+  position: fixed;
+  bottom: 70px;
+  /* right: 50 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  z-index: 9999;
+  user-select: none;
+  will-change: bottom;
+}
+
+.task_notification_contents {
+  height: 100%;
+  width: auto;
+  padding-inline: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+.task_notification_icon {
+  filter: drop-shadow(0px 0px 5px rgba(255, 0, 0, 0.275));
+}
+
+.task_notification_info {
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* gap: 5px; */
+}
+
+.task_notification_info h6 {
+  color: #7a7a7a;
+  margin-left: 6px;
+  font-size: 9px;
+  font-family: "sf pro display medium";
+}
+
+.task_notification_info p {
+  color: #cacaca;
+  font-size: 13px;
+  font-family: "sf pro display medium";
+  text-wrap: nowrap;
+}
