@@ -42,8 +42,8 @@ export default function ProfileMenu() {
               className={styles.profile_contact_option}
               onClick={handleProfileOutClick}
             >
-              <Link className={styles.profile_links} href="/contact-dev">
-                Contact Dev
+              <Link className={styles.profile_links} href="/trash">
+                Trash
               </Link>
             </div>
           </div>
