@@ -1,15 +1,18 @@
 "use client";
 
 import ErrorNotification from "@/components/ErrorNotification";
+import LogoutConfirm from "@/components/LogoutConfirm";
 import SuccessNotification from "@/components/SuccessNotification";
 import TaskNotification from "@/components/TaskNotification";
 import { useGlobal } from "@/context/AppContext";
 import "@/globals.css";
 
 const ClientWrapper = ({ children }: { children: React.ReactNode }) => {
-  const { toggleErrorNoti, toggleSuccessNoti, toggleTaskNoti } = useGlobal();
+  const { toggleErrorNoti, toggleSuccessNoti, toggleTaskNoti, toggleLogout } =
+    useGlobal();
   return (
     <>
+      {toggleLogout ? <LogoutConfirm /> : null}
       {toggleErrorNoti ? <ErrorNotification /> : null}
       {toggleSuccessNoti ? <SuccessNotification /> : null}
       {toggleTaskNoti ? <TaskNotification /> : null}

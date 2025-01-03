@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ProfileMenu() {
-  const { setProfileMenu, logout } = useGlobal();
+  const { setProfileMenu, setToggleLogout } = useGlobal();
 
   const handleProfileOutClick = () => {
     setProfileMenu((prev) => !prev);
@@ -53,11 +53,12 @@ export default function ProfileMenu() {
               className={styles.profile_links}
               href=""
               onClick={() => {
-                logout();
+                // logout();
+                setToggleLogout(true);
                 handleProfileOutClick();
               }}
             >
-              Logout{" "}
+              Logout
             </Link>
           </div>
         </motion.div>

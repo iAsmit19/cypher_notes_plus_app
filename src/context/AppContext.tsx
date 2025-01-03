@@ -72,6 +72,9 @@ type GlobalContextType = {
     email: string,
     password: string
   ) => Promise<{ token: string; user: string }>;
+  // State to manage the logout confirmation panel
+  toggleLogout: boolean | null;
+  setToggleLogout: React.Dispatch<React.SetStateAction<boolean | null>>;
   // Function to Logout the User
   logout: () => void;
 
@@ -270,15 +273,20 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
       throw error;
     }
   };
+  // State to manage the logout confirmation panel
+  const [toggleLogout, setToggleLogout] = useState<boolean | null>(null);
   // Function to handle the logout functionality
   const logout = () => {
-    const confirmLogout = window.confirm("are you sure you want to log out?");
-    if (!confirmLogout) return;
-    setUser(null);
-    // localStorage.removeItem("token");
-    setNotes([]);
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    router.push("/auth/login");
+    // const confirmLogout = window.confirm("are you sure you want to log out?");
+    // if (!confirmLogout) return;
+    if (toggleLogout) {
+      setUser(null);
+      setNotes([]);
+      document.cookie =
+        "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      router.push("/auth/login");
+      setToggleLogout(null);
+    }
   };
 
   // State to manage the notes
@@ -607,6 +615,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         user,
         register,
         login,
+        logout,
+        toggleLogout,
+        setToggleLogout,
         notes,
         setNotes,
         fetchNotes,
@@ -623,7 +634,6 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         deleteNotePermanently,
         profileMenu,
         setProfileMenu,
-        logout,
       }}
     >
       {children}

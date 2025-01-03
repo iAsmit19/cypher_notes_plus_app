@@ -95,6 +95,8 @@ export default function Note({ note }: NoteProps) {
           note.year.toString() === currentDate.getFullYear().toString()
             ? "Today"
             : `${getMonth(note.month)}, ${note.day}`}
+          &nbsp;
+          {note.year.toString() === currentDate.getFullYear().toString() ? null : `${note.year}`}
           &nbsp;|&nbsp;
           {parseInt(note.hours) < 10 ? `0${note.hours}` : note.hours}:
           {parseInt(note.mins) < 10 ? `0${note.mins}` : note.mins}
