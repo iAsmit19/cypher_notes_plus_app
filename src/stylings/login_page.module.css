@@ -29,6 +29,7 @@
 .login_page {
   background: url("/auth_back.webp");
   background-size: cover;
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
@@ -39,7 +40,7 @@
 .login_cont {
   border: 1px solid #5656569d;
   border-radius: 14px;
-  background-color: #3131319a;
+  background-color: #4242429a;
   height: 450px;
   width: 576px;
   display: flex;
@@ -47,9 +48,6 @@
   align-items: center;
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  transition: backdrop-filter 0.5s cubic-bezier(0.215, 0.61, 0.355, 1),
-    background-color 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
-    -webkit-backdrop-filter 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   overflow: hidden;
   padding: 3% 4%;
 }
@@ -75,6 +73,23 @@
   justify-content: space-evenly;
   align-items: center;
   /* padding: 5%; */
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 576px) {
+  .login_cont {
+    border: none;
+    border-radius: 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: 100%;
+    width: 100%;
+  }
+
+  .login_content {
+    height: 450px;
+    width: 550px;
+  }
 }
 
 .login_inputs input {
