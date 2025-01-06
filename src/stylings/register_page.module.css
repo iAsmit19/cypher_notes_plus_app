@@ -202,3 +202,51 @@
 .button_link:hover {
   background-color: #272727;
 }
+
+/* Mobile Phones */
+@media screen and (max-width: 576px) {
+  .register_page {
+    background: url("/auth_back.webp");
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  .register_cont {
+    border: none;
+    border-radius: 0;
+    background-color: #222222bf;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .register_content {
+    margin-top: 100px;
+    height: 450px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .register_inputs {
+    height: 60%;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .register_inputs input {
+    height: 26px;
+    width: 70%;
+  }
+  .register_inputs input::placeholder {
+    font-size: 11px;
+  }
+
+  .register_login_button p {
+    color: #fff;
+  }
+}

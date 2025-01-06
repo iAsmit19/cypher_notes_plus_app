@@ -114,43 +114,6 @@
   align-items: center;
 }
 
-/* Mobile Phones */
-@media screen and (max-width: 576px) {
-  .login_cont {
-    border: none;
-    border-radius: 0;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    height: 100%;
-    width: 100%;
-    align-items: flex-start;
-  }
-
-  .login_content {
-    margin-top: 100px;
-    height: 450px;
-    width: 550px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .login_inputs {
-    height: 60%;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .login_inputs input {
-    height: 26px;
-    width: 70%;
-  }
-  .login_inputs input::placeholder {
-    font-size: 11px;
-  }
-}
-
 .login_enter_button {
   height: auto;
   width: 55%;
@@ -161,6 +124,7 @@
   border-radius: 5px;
   background-color: #ffffff;
   color: #131313;
+  height: 100%;
   width: 100%;
   padding: 9px 0px;
   font-size: 16px;
@@ -228,4 +192,52 @@
 
 .button_link:hover {
   background-color: #272727;
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 576px) {
+  .login_page {
+    background: url("/auth_back.webp");
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  .login_cont {
+    border: none;
+    border-radius: 0;
+    background-color: #222222bf;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .login_content {
+    margin-top: 100px;
+    height: 450px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login_inputs {
+    height: 60%;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .login_inputs input {
+    height: 26px;
+    width: 70%;
+  }
+  .login_inputs input::placeholder {
+    font-size: 11px;
+  }
+
+  .login_register_button p {
+    color: #fff;
+  }
 }
