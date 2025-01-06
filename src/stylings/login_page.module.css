@@ -75,23 +75,6 @@
   /* padding: 5%; */
 }
 
-/* Mobile Phones */
-@media screen and (max-width: 576px) {
-  .login_cont {
-    border: none;
-    border-radius: 0;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    height: 100%;
-    width: 100%;
-  }
-
-  .login_content {
-    height: 450px;
-    width: 550px;
-  }
-}
-
 .login_inputs input {
   outline: none;
   border: none;
@@ -129,6 +112,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 576px) {
+  .login_cont {
+    border: none;
+    border-radius: 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .login_content {
+    margin-top: 100px;
+    height: 450px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login_inputs {
+    height: 60%;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .login_inputs input {
+    height: 26px;
+    width: 70%;
+  }
+  .login_inputs input::placeholder {
+    font-size: 11px;
+  }
 }
 
 .login_enter_button {
