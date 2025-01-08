@@ -24,7 +24,7 @@ export default function MenuSS() {
         animate={{ opacity: 1, x: 0 }}
         transition={{
           ease: "easeOut",
-          duration: 0.1,
+          duration: 0.05,
           delay: 0.1,
         }}
       >

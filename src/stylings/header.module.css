@@ -535,11 +535,9 @@
 
 .menu_sm {
   border-left: 1px solid #212121af;
-  background-color: #0c0c0cf3;
+  background-color: #0c0c0c;
   height: 100%;
   width: 50%;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   justify-content: center;
