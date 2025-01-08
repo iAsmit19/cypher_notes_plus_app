@@ -63,6 +63,10 @@ type GlobalContextType = {
   // Function to call the Error notification
   toggleTaskNotiSetter: () => void;
 
+  // State to manage the Menu for Small Screens
+  menuS: boolean;
+  setMenuS: React.Dispatch<React.SetStateAction<boolean>>;
+
   // State to set the User
   user: string | null;
   // Function to Register the User
@@ -119,7 +123,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
 
   // State to manage the Add New Note Panel
-  const [addPanel, setAddPanel] = useState(false);
+  const [addPanel, setAddPanel] = useState<boolean>(false);
   // Function to toggle the Add New Note Panel
   const toggleAddPanel = () => {
     setAddPanel((prev) => !prev);
@@ -196,6 +200,9 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
 
   // State to manage the Profile Menu
   const [profileMenu, setProfileMenu] = useState(false);
+
+  // State to manage the Menu for Small Screens
+  const [menuS, setMenuS] = useState(false);
 
   // State to manage the User Registration
   const [user, setUser] = useState<string | null>(null);
@@ -612,6 +619,8 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         toggleTaskNoti,
         setToggleTaskNoti,
         toggleTaskNotiSetter,
+        menuS,
+        setMenuS,
         user,
         register,
         login,

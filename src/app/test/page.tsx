@@ -1,5 +1,6 @@
 "use client";
 
+import MenuSS from "@/components/MenuSS";
 import styles from "@/stylings/test.module.css";
 import { useEffect, useState } from "react";
 
@@ -36,6 +37,7 @@ export default function TestPage() {
 
   return (
     <div className={styles.test_page}>
+      <MenuSS />
       <h1>Testing Page</h1>
       <p>This is a page to test the elements.</p>
       <p>window width: {width}px</p>

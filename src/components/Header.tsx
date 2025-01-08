@@ -7,26 +7,69 @@ import AddPanel from "./AddPanel";
 import { useGlobal } from "@/context/AppContext";
 import ProfileMenu from "./ProfileMenu";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import MenuSS from "./MenuSS";
+
+const useWindowDimensions = () => {
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    // handler to update dimensions
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    // set initial dimensions
+    handleResize();
+
+    // add resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // cleanup listener on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+};
 
 export default function Header() {
   // Extracting values from the Context
-  const { addPanel, toggleAddPanel, profileMenu, setProfileMenu } = useGlobal();
+  const {
+    addPanel,
+    toggleAddPanel,
+    profileMenu,
+    setProfileMenu,
+    menuS,
+    setMenuS,
+  } = useGlobal();
 
-  const handleprofileClick = () => {
+  const handleProfileClick = () => {
     setProfileMenu((prev) => !prev);
   };
 
-  const pathname = usePathname();
+  const handleMenuSClick = () => {
+    setMenuS((prev) => !prev);
+  };
 
+  const pathname = usePathname();
+  const { width } = useWindowDimensions();
   return (
     <header className={styles.header}>
       <div className={styles.header_cont}>
         <div className={styles.header_logo}>
           <Image
-            src="/cypher-logo.svg"
-            alt=""
-            height={24}
-            width={100}
+            // src="/cypher-logo.svg"
+            src={width > 576 ? "/logo_L.svg" : "/logo_Sm.svg"}
+            alt="Cypher Notes"
+            height={27}
+            width={width > 576 ? 80 : 40}
+            sizes="(max-width: 576px) 40px, 80px"
             draggable="false"
           />
         </div>
@@ -34,8 +77,8 @@ export default function Header() {
           <div className={styles.header_add_button} onClick={toggleAddPanel}>
             <p>
               <Image
-                src="/cypher-add.svg"
-                alt=""
+                src="/add_note.svg"
+                alt="|"
                 height={11}
                 width={11}
                 draggable="false"
@@ -78,7 +121,17 @@ export default function Header() {
               height={26}
               width={26}
               draggable="false"
-              onClick={handleprofileClick}
+              onClick={handleProfileClick}
+            />
+          </div>
+          <div className={styles.menu_sm_icon}>
+            <Image
+              src="menu_Sm.svg"
+              alt="="
+              height={24}
+              width={24}
+              draggable="false"
+              onClick={handleMenuSClick}
             />
           </div>
         </div>
@@ -86,6 +139,11 @@ export default function Header() {
 
       {addPanel ? <AddPanel /> : null}
       {profileMenu ? <ProfileMenu /> : null}
+      {menuS ? <MenuSS /> : null}
+
+      <div className={styles.add_button_sm} onClick={toggleAddPanel}>
+        <Image src="/add_note_sm.svg" alt="+" height={20} width={20} />
+      </div>
     </header>
   );
 }

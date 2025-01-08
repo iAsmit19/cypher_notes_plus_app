@@ -206,7 +206,7 @@
 /* Mobile Phones */
 @media screen and (max-width: 576px) {
   .register_page {
-    background: url("/auth_back.webp");
+    background: url("/auth_bg.webp");
     background-size: cover;
     background-position: bottom;
   }
