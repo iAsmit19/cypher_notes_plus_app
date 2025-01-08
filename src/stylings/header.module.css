@@ -664,3 +664,43 @@
     display: flex;
   }
 }
+
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .header {
+    height: 6vh;
+  }
+
+  .header_add_button {
+    display: none;
+  }
+
+  .header_navbar {
+    display: none;
+  }
+
+  .add_button_sm {
+    display: flex;
+  }
+
+  .header_settings {
+    display: none;
+  }
+
+  .menu_sm_icon {
+    display: flex;
+  }
+
+  .menu_sm_cont {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .header_subject {
+    gap: 30px;
+  }
+
+  .header_nav_element {
+    width: 80px;
+  }
+}

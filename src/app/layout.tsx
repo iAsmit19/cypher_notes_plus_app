@@ -7,7 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: "Cypher Notes",
   description:
-    "A note taking website to keep the notes secure because they are not just notes, they are tohughts, ideas, and much more.",
+    "A note taking website to keep the notes secure because they are not just notes, they are thoughts, ideas, and much more.",
 };
 
 export default function RootLayout({

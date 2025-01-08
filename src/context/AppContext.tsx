@@ -6,6 +6,7 @@ import React, {
   useState,
   createContext,
   useRef,
+  useEffect,
 } from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
@@ -22,6 +23,11 @@ type Note = {
   hours: string;
   mins: string;
   deletedAt: string | null;
+};
+
+type WindowDimensions = {
+  width: number;
+  height: number;
 };
 
 // Context API Skeleton / Type
@@ -112,6 +118,9 @@ type GlobalContextType = {
   deleteFromTrash: (noteId: string) => Promise<void>;
   // Function to delete all the Notes Permanently from the Database
   deleteNotePermanently: () => Promise<void>;
+
+  // Window Resizing Handler
+  useWindowDimensions: () => WindowDimensions;
 };
 
 // Context Creation
@@ -598,6 +607,34 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  const useWindowDimensions = () => {
+    const [windowDimensions, setWindowDimensions] = useState({
+      width: 0,
+      height: 0,
+    });
+
+    useEffect(() => {
+      // handler to update dimensions
+      const handleResize = () => {
+        setWindowDimensions({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+
+      // set initial dimensions
+      handleResize();
+
+      // add resize event listener
+      window.addEventListener("resize", handleResize);
+
+      // cleanup listener on unmount
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return windowDimensions;
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -643,6 +680,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         deleteNotePermanently,
         profileMenu,
         setProfileMenu,
+        useWindowDimensions,
       }}
     >
       {children}

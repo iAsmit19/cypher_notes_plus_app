@@ -37,8 +37,10 @@
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 .main_grid {
@@ -57,8 +59,8 @@
 
 .note_cont {
   border: 1px solid #16161696;
-  background-color: #1c1c1c;
-  color: #ebebeb;
+  background-color: #171717;
+  color: #ffffff;
   border-radius: 7px;
   min-height: 180px;
   height: auto;
@@ -75,7 +77,7 @@
 
 .note_cont:hover {
   border: 1px solid #707070;
-  box-shadow: 2px 2px 0px 1px #dbdbdb9d;
+  box-shadow: 2px 2px 0px 0px #ffffff52;
   transition: all ease-in-out 100ms;
 }
 
@@ -148,7 +150,7 @@
 }
 
 .note_title:focus {
-  outline: 1px solid #767676;
+  outline: 1px solid #494949bc;
   border-radius: 4px;
 }
 
@@ -170,7 +172,7 @@
 }
 
 .note_content:focus {
-  outline: 1px solid #767676;
+  outline: 1px solid #494949bc;
   border-radius: 4px;
 }
 
@@ -266,4 +268,32 @@
   align-items: center;
   cursor: pointer;
   transition: all ease-in-out 200ms;
+}
+
+@media screen and (max-width: 576px) {
+  .note_cont {
+    min-height: 160px;
+    width: 300px;
+  }
+
+  .note_subject {
+    padding: 14px;
+    padding-bottom: 0;
+  }
+
+  .note_title h1 {
+    font-size: 16px;
+  }
+
+  .note_content {
+    min-height: 50px;
+  }
+
+  .note_content div {
+    font-size: 11px;
+  }
+
+  .note_status_bar p {
+    font-size: 9px;
+  }
 }

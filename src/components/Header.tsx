@@ -7,36 +7,7 @@ import AddPanel from "./AddPanel";
 import { useGlobal } from "@/context/AppContext";
 import ProfileMenu from "./ProfileMenu";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import MenuSS from "./MenuSS";
-
-const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: 0,
-    height: 0,
-  });
-
-  useEffect(() => {
-    // handler to update dimensions
-    const handleResize = () => {
-      setWindowDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    // set initial dimensions
-    handleResize();
-
-    // add resize event listener
-    window.addEventListener("resize", handleResize);
-
-    // cleanup listener on unmount
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowDimensions;
-};
 
 export default function Header() {
   // Extracting values from the Context
@@ -58,6 +29,8 @@ export default function Header() {
   };
 
   const pathname = usePathname();
+
+  const { useWindowDimensions } = useGlobal();
   const { width } = useWindowDimensions();
   return (
     <header className={styles.header}>

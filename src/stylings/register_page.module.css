@@ -27,7 +27,7 @@
 }
 
 .register_page {
-  background: url("/auth_back.webp");
+  background: url("/auth_bg.webp");
   background-size: cover;
   height: 100%;
   width: 100%;

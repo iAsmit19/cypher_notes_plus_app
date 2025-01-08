@@ -47,10 +47,12 @@ export default function Trash() {
           <div className={styles.trash_empty_cont}>
             <Image
               priority
-              src="/trash-empty-graphic.webp"
+              src="/trash_empty_graphic.webp"
               alt=""
-              height={400}
-              width={300}
+              layout="intrinsic"
+              height={200}
+              width={200}
+              draggable="false"
             />
             <p>No notes found in the Trash Fill...</p>
           </div>
