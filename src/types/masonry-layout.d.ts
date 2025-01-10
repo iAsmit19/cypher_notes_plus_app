@@ -13,6 +13,6 @@ declare module "masonry-layout" {
     fitWidth?: boolean;
     horizontalOrder?: boolean;
     percentPosition?: boolean;
-    stagger: number;
+    // stagger: number;
   }
 }

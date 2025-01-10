@@ -40,7 +40,7 @@ export default function Main() {
             gutter: 40,
             fitWidth: true,
             percentPosition: true,
-            stagger: 30,
+            // stagger: 30,
           });
         }
 
