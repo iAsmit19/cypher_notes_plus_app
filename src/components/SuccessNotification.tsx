@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function SuccessNotification() {
-  const { successNotiMsg } = useGlobal();
+  const { successNotiMsg, useWindowDimensions } = useGlobal();
+  const { width } = useWindowDimensions();
+
   return (
     <motion.div
       className={styles.notification_cont}
@@ -19,8 +21,8 @@ export default function SuccessNotification() {
           className={styles.success_notification_icon}
           src="/success_notification_icon.svg"
           alt=""
-          height={20}
-          width={20}
+          height={width > 576 ? 20 : 16}
+          width={width > 576 ? 20 : 16}
           draggable="false"
         />
         <div className={styles.notification_info}>

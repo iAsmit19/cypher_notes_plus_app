@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     shortcut: ".favicon-32x32.png",
     apple: "/apple-touch-icon.png",
   },
-  themeColor: "#181818",
 };
 
 export default function RootLayout({

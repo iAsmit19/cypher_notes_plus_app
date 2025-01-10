@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function ErrorNotification() {
-  const { errorNotiMsg } = useGlobal();
+  const { errorNotiMsg, useWindowDimensions } = useGlobal();
+  const { width } = useWindowDimensions();
+
   return (
     <motion.div
       className={styles.notification_cont}
@@ -19,8 +21,8 @@ export default function ErrorNotification() {
           className={styles.error_notification_icon}
           src="/error_notification_icon.svg"
           alt=""
-          height={20}
-          width={20}
+          height={width > 576 ? 20 : 16}
+          width={width > 576 ? 20 : 16}
           draggable="false"
         />
         <div className={styles.notification_info}>
