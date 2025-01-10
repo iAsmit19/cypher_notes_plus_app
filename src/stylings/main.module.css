@@ -296,4 +296,11 @@
   .note_status_bar p {
     font-size: 9px;
   }
+
+  .note_delete_button {
+    background-color: transparent;
+    width: auto;
+    margin-left: 10px;
+    opacity: 1;
+  }
 }

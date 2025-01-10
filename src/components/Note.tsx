@@ -2,6 +2,7 @@
 
 import { useGlobal } from "@/context/AppContext";
 import styles from "@/stylings/main.module.css";
+import Image from "next/image";
 
 type NoteProps = {
   note: {
@@ -19,7 +20,7 @@ type NoteProps = {
 };
 
 export default function Note({ note }: NoteProps) {
-  const { moveToTrash, updateNote } = useGlobal();
+  const { moveToTrash, updateNote, useWindowDimensions } = useGlobal();
 
   // Function to convert the numerical month into an alphabetical month
   function getMonth(monthNumber: string) {
@@ -52,6 +53,8 @@ export default function Note({ note }: NoteProps) {
       console.error("Error updating note:", error);
     }
   };
+
+  const { width } = useWindowDimensions();
 
   return (
     <div className={styles.note_cont}>
@@ -87,7 +90,11 @@ export default function Note({ note }: NoteProps) {
           className={styles.note_delete_button}
           onClick={() => moveToTrash(note._id)}
         >
-          Delete
+          {width > 576 ? (
+            "Delete"
+          ) : (
+            <Image src="/delete_icon.svg" alt="-" height={15} width={15} />
+          )}
         </button>
         <p>
           {note.day.toString() === currentDate.getDate().toString() &&
@@ -96,7 +103,9 @@ export default function Note({ note }: NoteProps) {
             ? "Today"
             : `${getMonth(note.month)}, ${note.day}`}
           &nbsp;
-          {note.year.toString() === currentDate.getFullYear().toString() ? null : `${note.year}`}
+          {note.year.toString() === currentDate.getFullYear().toString()
+            ? null
+            : `${note.year}`}
           &nbsp;|&nbsp;
           {parseInt(note.hours) < 10 ? `0${note.hours}` : note.hours}:
           {parseInt(note.mins) < 10 ? `0${note.mins}` : note.mins}

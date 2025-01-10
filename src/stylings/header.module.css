@@ -188,9 +188,8 @@
   background-color: transparent;
   height: 100vh;
   width: 100%;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  /* margin-top: 6vh; */
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   position: absolute;
   top: 0;
   left: 0;
@@ -663,6 +662,21 @@
   .menu_sm_cont {
     display: flex;
   }
+
+  .add_panel {
+    border: none;
+    border-radius: 0;
+    height: 250px;
+    width: 100%;
+  }
+
+  .add_title_input {
+    font-size: 16px;
+  }
+
+  .add_content_input {
+    font-size: 12px;
+  }
 }
 
 @media screen and (min-width: 577px) and (max-width: 768px) {
@@ -692,6 +706,13 @@
 
   .menu_sm_cont {
     display: flex;
+  }
+
+  .add_panel {
+    border: none;
+    border-radius: 0;
+    height: 250px;
+    width: 100%;
   }
 }
 

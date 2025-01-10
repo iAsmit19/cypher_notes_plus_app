@@ -40,6 +40,7 @@ export default function Main() {
             gutter: 40,
             fitWidth: true,
             percentPosition: true,
+            stagger: 30,
           });
         }
 
@@ -63,6 +64,7 @@ export default function Main() {
       {!notes.length ? (
         <div className={styles.loading_cont}>
           <Image
+            priority
             src="/main_empty_graphic.webp"
             alt="No Notes Available"
             height={200}
