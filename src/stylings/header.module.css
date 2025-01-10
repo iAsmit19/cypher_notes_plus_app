@@ -500,9 +500,11 @@
 }
 
 .add_button_sm {
-  border: 1px solid #3d3d3d70;
+  border: 1px solid #494949c8;
   border-radius: 1000px;
-  background-color: #101010;
+  background-color: #212121e1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   height: 60px;
   width: 60px;
   display: none;

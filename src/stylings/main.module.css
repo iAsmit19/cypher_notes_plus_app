@@ -225,7 +225,7 @@
 
 .note_restore_button {
   outline: none;
-  /* border: 1px solid #545454; */
+  border: 1px solid transparent;
   border: none;
   border-radius: 4px;
   background-color: #111111;
@@ -302,5 +302,16 @@
     width: auto;
     margin-left: 10px;
     opacity: 1;
+  }
+
+  .note_restore_button {
+    width: 60px;
+    font-size: 9px;
+  }
+
+  .trashed_note_delete_button {
+    height: 20px;
+    width: 60px;
+    font-size: 9px;
   }
 }
