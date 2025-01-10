@@ -158,4 +158,12 @@
   .notification_info p {
     font-size: 11px;
   }
+
+  .task_notification_info h6 {
+    font-size: 7px;
+  }
+
+  .task_notification_info p {
+    font-size: 1px;
+  }
 }
