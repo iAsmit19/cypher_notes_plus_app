@@ -375,7 +375,6 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         throw new Error(data.error);
       }
 
-      console.log("Note added successfully");
       setNote(token);
 
       setAddPanel((prev) => !prev);

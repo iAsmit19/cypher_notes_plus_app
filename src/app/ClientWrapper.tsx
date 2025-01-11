@@ -10,13 +10,15 @@ import "@/globals.css";
 const ClientWrapper = ({ children }: { children: React.ReactNode }) => {
   const { toggleErrorNoti, toggleSuccessNoti, toggleTaskNoti, toggleLogout } =
     useGlobal();
+
   return (
     <>
       {toggleLogout ? <LogoutConfirm /> : null}
       {toggleErrorNoti ? <ErrorNotification /> : null}
       {toggleSuccessNoti ? <SuccessNotification /> : null}
       {toggleTaskNoti ? <TaskNotification /> : null}
-      <div className="s_sc_block">
+
+      {/* <div className="s_sc_block">
         <div className="s_sc_window">
           <h2>Apologies</h2>
           <p>
@@ -24,7 +26,7 @@ const ClientWrapper = ({ children }: { children: React.ReactNode }) => {
             the next update.
           </p>
         </div>
-      </div>
+      </div> */}
       {children}
     </>
   );

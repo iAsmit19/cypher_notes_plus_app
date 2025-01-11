@@ -6,8 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Cookies from "js-cookie";
-// import ErrorNotification from "@/components/ErrorNotification";
-// import SuccessNotification from "@/components/SuccessNotification";
+import CookiesNotice from "@/components/CookiesNotice";
 
 export default function LoginPage() {
   // Extracting values from the context
@@ -62,8 +61,7 @@ export default function LoginPage() {
 
   return (
     <div className={styles.login_page}>
-      {/* {toggleErrorNoti ? <ErrorNotification /> : null} */}
-      {/* {toggleSuccessNoti ? <SuccessNotification /> : null} */}
+      <CookiesNotice />
       <div className={styles.login_cont}>
         <form
           className={styles.login_content}

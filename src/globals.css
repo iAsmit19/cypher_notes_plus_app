@@ -84,6 +84,42 @@ body {
   font-size: 13px;
 }
 
+.c_n_cont {
+  background-color: #ffffffc3;
+  color: #131313;
+  height: 90px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding-inline: 10%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+}
+
+.c_n_cont p {
+  font-family: "sf pro display medium";
+  font-size: 13px;
+}
+
+.c_n_cont button {
+  background-color: #0073de;
+  color: #fff;
+  font-family: "sf pro display medium";
+  font-size: 11px;
+  height: 25px;
+  width: 90px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 900px) {
   .s_sc_block {
     display: none;

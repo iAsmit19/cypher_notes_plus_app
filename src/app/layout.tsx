@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/globals.css";
 import { GlobalProvider } from "@/context/AppContext";
 import ClientWrapper from "./ClientWrapper";
-// import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Cypher Notes Plus",
@@ -26,7 +26,7 @@ export default function RootLayout({
         <GlobalProvider>
           <ClientWrapper>
             {children}
-            {/* <SpeedInsights /> */}
+            <SpeedInsights />
           </ClientWrapper>
         </GlobalProvider>
       </body>
